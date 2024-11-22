@@ -4,6 +4,9 @@
  */
 package Vista;
 
+import Controlador.ctrlFrmDoctores;
+import Modelo.Doctores;
+
 /**
  *
  * @author Estudiante
@@ -17,6 +20,20 @@ public class FrmDoctores extends javax.swing.JFrame {
         initComponents();
     }
 
+    public static void initFrmDoctores(){
+        Doctores modelo = new Doctores();
+        FrmDoctores vista = new FrmDoctores();
+        ctrlFrmDoctores controlador = new ctrlFrmDoctores(modelo,vista);
+        
+        vista.setVisible(true);
+        
+    }
+    
+    
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,7 +53,7 @@ public class FrmDoctores extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTable = new javax.swing.JTable();
         txtNombre = new javax.swing.JTextField();
         txtEspecialidad = new javax.swing.JTextField();
         txtEdad = new javax.swing.JTextField();
@@ -86,7 +103,7 @@ public class FrmDoctores extends javax.swing.JFrame {
         jLabel3.setText("Edad");
         jpFondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 191, -1, -1));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -97,7 +114,7 @@ public class FrmDoctores extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(jTable);
 
         jpFondo.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 443, 114));
         jpFondo.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 170, -1));
@@ -112,9 +129,7 @@ public class FrmDoctores extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jpFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jpFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,7 +173,7 @@ public class FrmDoctores extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmDoctores().setVisible(true);
+                initFrmDoctores();
             }
         });
     }
@@ -173,8 +188,8 @@ public class FrmDoctores extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JTable jTable;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     public javax.swing.JPanel jpFondo;
     public javax.swing.JTextField txtEdad;
     public javax.swing.JTextField txtEspecialidad;
